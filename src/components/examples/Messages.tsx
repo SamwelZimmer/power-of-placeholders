@@ -1,12 +1,13 @@
 "use client";
 
+import { toast } from "sonner";
+
 import { Input } from "@/components/ui/input";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/assets/IconMap";
-import { Card } from "./ui/card";
 import { MessageItem } from "@/lib/types";
 import { useMediaQuery } from "@/hooks/use-media-query";
-import { toast } from "sonner";
 
 export default function Messages({ data }: { data: MessageItem[] }) {
   const isDesktop = useMediaQuery("(min-width: 768px)");

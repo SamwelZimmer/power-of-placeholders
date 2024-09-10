@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/sonner";
 
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import TopNav from "@/components/hud/TopNav";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -38,9 +39,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Toaster richColors />
-          <TopNav />
-          <main className="mt-[58px]">{children}</main>
+          <TooltipProvider>
+            <Toaster richColors />
+            <TopNav />
+            <main className="mt-[58px]">{children}</main>
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

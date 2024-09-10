@@ -1,5 +1,5 @@
-import Messages from "@/components/Messages";
-import Testimonial from "@/components/Testimonial";
+import Messages from "@/components/examples/Messages";
+import Testimonial from "@/components/examples/Testimonial";
 
 import {
   TESTIMONIALS,
