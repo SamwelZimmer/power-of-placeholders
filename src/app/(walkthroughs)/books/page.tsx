@@ -1,4 +1,9 @@
-import BookCard, { BookItem } from "@/components/examples/BookCard";
+import { Suspense } from "react";
+
+import { BookItem } from "@/components/examples/BookCard";
+import { BooksProvider } from "@/components/providers/books-provider";
+import BookListHeader from "./BookListHeader";
+import BookList from "./BookList";
 
 const BOOK_LIST: BookItem[] = [
   {
@@ -32,12 +37,13 @@ const BOOK_LIST: BookItem[] = [
 
 export default function BooksPage() {
   return (
-    <div className="w-full max-w-md px-6 sm:px-0 mx-auto h-full pt-12 flex flex-col gap-2">
-      <div className="w-full flex flex-col gap-2">
-        {BOOK_LIST.map((book, i) => (
-          <BookCard key={i} data={book} />
-        ))}
-      </div>
-    </div>
+    <Suspense>
+      <BooksProvider initialBooks={BOOK_LIST}>
+        <div className="w-full max-w-md px-6 sm:px-0 mx-auto h-full pt-6 sm:pt-16 flex flex-col gap-2">
+          <BookListHeader />
+          <BookList />
+        </div>
+      </BooksProvider>
+    </Suspense>
   );
 }
