@@ -13,7 +13,7 @@ export type BookItem = {
   description?: string;
   author: string;
   yearPublished?: number;
-  isFiction: boolean;
+  isFictional: boolean;
   rating: number;
 };
 
@@ -53,12 +53,12 @@ export default function BookCard({ data }: BookCardProps) {
           <Tooltip>
             <TooltipTrigger className="h-min">
               <Icon
-                name={data.isFiction ? "wand" : "glasses"}
+                name={data.isFictional ? "wand" : "glasses"}
                 className="w-4 text-muted-foreground"
               />
             </TooltipTrigger>
             <TooltipContent>
-              <p>{data.isFiction ? "Fiction" : "Non-Fiction"}</p>
+              <p>{data.isFictional ? "Fiction" : "Non-Fiction"}</p>
             </TooltipContent>
           </Tooltip>
 

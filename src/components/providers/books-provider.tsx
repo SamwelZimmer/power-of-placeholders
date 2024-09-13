@@ -78,7 +78,7 @@ export const BooksProvider = ({
     // filter by fiction or non-fiction
     if (activeFilters.isFiction !== null) {
       filteredBooks = filteredBooks.filter(
-        (book) => book.isFiction == activeFilters.isFiction
+        (book) => book.isFictional == activeFilters.isFiction
       );
     }
 
