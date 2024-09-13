@@ -7,7 +7,7 @@ import React, {
   ReactNode,
   useEffect,
 } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import { useMounted } from "@/hooks/use-mounted";
 import { BookItem } from "@/lib/types";
@@ -51,7 +51,6 @@ export const BooksProvider = ({
 }) => {
   const mounted = useMounted();
   const router = useRouter();
-  const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const [books, setBooks] = useState<BookItem[]>(initialBooks);
