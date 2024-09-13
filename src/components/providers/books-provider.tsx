@@ -66,9 +66,9 @@ export const BooksProvider = ({
   if (searchQuery) {
     filteredBooks = filteredBooks.filter(
       (book) =>
-        book.title.toLowerCase().includes(searchQuery) ||
-        book.author.toLowerCase().includes(searchQuery) ||
-        book.description?.toLowerCase().includes(searchQuery)
+        book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        book.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        book.description?.toLowerCase().includes(searchQuery.toLowerCase())
     );
   }
 
