@@ -15,7 +15,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex flex-col py-12">
-      <SectionHeading text="Messages" className="mt-0" />
+      <SectionHeading text="Testimonials" className="mt-0" />
 
       <div className="grid lg:grid-cols-2 xl:grid-cols-3 mx-auto max-w-max gap-6 px-6 sm:px-0">
         <Testimonial />
@@ -51,7 +51,7 @@ export default function Home() {
 
       <SectionHeading text="Book Reviews" />
 
-      <div className="flex flex-col lg:flex-row gap-6 px-6 sm:px-0 mx-auto w-full justify-center items-center">
+      <div className="flex flex-col lg:flex-row gap-6 mx-auto justify-center items-center w-full max-w-md px-6 sm:px-0">
         <Books books={[PLACEHOLDER_BOOK, PLACEHOLDER_BOOK, PLACEHOLDER_BOOK]} />
         <VerticalVsDivider className="text-muted-foreground hidden lg:block" />
         <HorizontalVsDivider className="lg:hidden" />
@@ -86,13 +86,13 @@ const SectionHeading = ({
 const HorizontalVsDivider = ({ className }: { className?: string }) => (
   <div
     className={cn(
-      "flex items-center gap-4 w-full max-w-sm my-3 mx-auto text-muted-foreground lg:hidden",
+      "flex items-center gap-4 w-full max-w-sm my-3 mx-auto text-muted-foreground",
       className
     )}
   >
-    <hr className="border w-full block lg:hidden" />
+    <hr className="border w-full block" />
     <span>vs</span>
-    <hr className="border w-full block lg:hidden" />
+    <hr className="border w-full block" />
   </div>
 );
 

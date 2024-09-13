@@ -59,7 +59,7 @@ export const BooksProvider = ({
   const [activeFilters, setActiveFilters] =
     useState<BookFilters>(defaultFilters);
 
-  const baseRoot = pathname;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL + "/books";
 
   let filteredBooks = books;
 
@@ -134,8 +134,8 @@ export const BooksProvider = ({
 
     const queryString = params.join("&");
 
-    router.push(`${baseRoot}?${queryString}`);
-  }, [searchQuery, activeFilters, baseRoot, router]);
+    router.push(`${baseUrl}?${queryString}`);
+  }, [searchQuery, activeFilters, baseUrl, router]);
 
   if (mounted) {
     return (
