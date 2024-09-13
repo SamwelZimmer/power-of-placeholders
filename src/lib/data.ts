@@ -1,5 +1,4 @@
-import { BookItem } from "@/components/examples/BookCard";
-import { TestimonialData, MessageItem } from "@/lib/types";
+import { TestimonialData, MessageItem, BookItem } from "@/lib/types";
 
 export const TESTIMONIALS: TestimonialData[] = [
   {
@@ -123,6 +122,24 @@ export const BOOKS: BookItem[] = [
     yearPublished: 1925,
   },
   {
+    title: "Atlas Shrugged",
+    author: "Ayn Rand",
+    rating: 3.3,
+    description:
+      "A philosophical novel that explores the role of the mind in man's existence and the consequences of abandoning intellectual achievement.",
+    isFictional: true,
+    yearPublished: 1957,
+  },
+  {
+    title: "The Art of War",
+    author: "Sun Tzu",
+    rating: 4.9,
+    description:
+      "An ancient Chinese military treatise attributed to Sun Tzu, focusing on military strategy and tactics.",
+    isFictional: false,
+    yearPublished: -500,
+  },
+  {
     title: "Moby Dick",
     author: "Herman Melville",
     rating: 4.5,
@@ -149,15 +166,7 @@ export const BOOKS: BookItem[] = [
     isFictional: true,
     yearPublished: 2005,
   },
-  {
-    title: "The Art of War",
-    author: "Sun Tzu",
-    rating: 4.9,
-    description:
-      "An ancient Chinese military treatise attributed to Sun Tzu, focusing on military strategy and tactics.",
-    isFictional: false,
-    yearPublished: -500,
-  },
+
   {
     title: "War and Peace",
     author: "Leo Tolstoy",
@@ -193,22 +202,20 @@ export const BOOKS: BookItem[] = [
     yearPublished: 1960,
   },
   {
+    title: "The Bible",
+    author: "Various",
+    rating: 4.7,
+    description: "",
+    isFictional: false,
+    yearPublished: -1500,
+  },
+  {
     title: "The Lord of the Rings",
     author: "J.R.R. Tolkien",
     rating: 4.8,
     description: "An epic fantasy adventure in Middle-earth.",
     isFictional: true,
     yearPublished: 1954,
-  },
-
-  {
-    title: "Atlas Shrugged",
-    author: "Ayn Rand",
-    rating: 3.3,
-    description:
-      "A philosophical novel that explores the role of the mind in man's existence and the consequences of abandoning intellectual achievement.",
-    isFictional: true,
-    yearPublished: 1957,
   },
   {
     title: "The Alchemist",
@@ -237,13 +244,14 @@ export const BOOKS: BookItem[] = [
     isFictional: true,
     yearPublished: 1922,
   },
-
-  {
-    title: "The Bible",
-    author: "Various",
-    rating: 4.7,
-    description: "",
-    isFictional: false,
-    yearPublished: -1500,
-  },
 ];
+
+export const PLACEHOLDER_BOOK: BookItem = {
+  title: "Book Title",
+  description:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto, ipsam aliquam rem et quia ad delectus beatae dolorum harum.",
+  author: "Author's Name",
+  isFictional: true,
+  yearPublished: 1212,
+  rating: 3.5,
+};

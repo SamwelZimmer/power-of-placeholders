@@ -10,7 +10,7 @@ import React, {
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { useMounted } from "@/hooks/use-mounted";
-import { BookItem } from "@/components/examples/BookCard";
+import { BookItem } from "@/lib/types";
 
 type BookFilters = {
   ratingRange: number[];

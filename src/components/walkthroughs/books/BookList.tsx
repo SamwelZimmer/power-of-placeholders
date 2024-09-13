@@ -1,6 +1,6 @@
 "use client";
 
-import BookCard from "@/components/examples/BookCard";
+import BookCard from "@/components/walkthroughs/books/BookCard";
 import {
   defaultFilters,
   useBooksContext,

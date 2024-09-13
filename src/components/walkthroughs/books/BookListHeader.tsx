@@ -30,8 +30,8 @@ export default function BookListHeader() {
     useBooksContext();
 
   return (
-    <div className="flex flex-col">
-      <div className="w-full flex gap-2">
+    <div className="flex flex-col fixed w-[calc(100%-48px)] sm:w-full max-w-md z-20 ">
+      <div className="w-full flex gap-2 bg-background">
         <DefaultSearch
           value={searchQuery}
           setValue={setSearchQuery}
@@ -90,6 +90,8 @@ export default function BookListHeader() {
           <span>New</span>
         </Button>
       </div>
+
+      <div className="w-full h-2 bg-gradient-to-t from-transparent to-background" />
     </div>
   );
 }
