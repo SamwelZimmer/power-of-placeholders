@@ -14,3 +14,12 @@ export type MessageItem = {
   sent_by_user: boolean;
   content: string;
 };
+
+export type BookItem = {
+  title: string;
+  description?: string;
+  author: string;
+  yearPublished?: number;
+  isFictional: boolean;
+  rating: number;
+};

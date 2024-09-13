@@ -6,16 +6,12 @@ import { toast } from "sonner";
 
 import { Icon } from "@/assets/IconMap";
 import { Card } from "@/components/ui/card";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
-
-export type BookItem = {
-  title: string;
-  description?: string;
-  author: string;
-  yearPublished?: number;
-  isFiction: boolean;
-  rating: number;
-};
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { BookItem } from "@/lib/types";
 
 interface BookCardProps {
   data: BookItem;
@@ -25,12 +21,19 @@ export default function BookCard({ data }: BookCardProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [hovering, setHovering] = useState(false);
 
+  const onClick = () => {
+    if (!data.description) return;
+    setIsOpen(!isOpen);
+  };
+
   return (
     <Card
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
-      onClick={() => setIsOpen(!isOpen)}
-      className="w-full px-4 py-3 rounded-lg flex flex-col cursor-pointer hover:bg-muted"
+      onClick={onClick}
+      className={`w-full px-4 py-3 rounded-lg flex flex-col ${
+        data.description && "hover:bg-muted cursor-pointer"
+      }`}
     >
       <div className="flex justify-between">
         <span className="font-semibold">{data.title}</span>
@@ -53,12 +56,12 @@ export default function BookCard({ data }: BookCardProps) {
           <Tooltip>
             <TooltipTrigger className="h-min">
               <Icon
-                name={data.isFiction ? "wand" : "glasses"}
+                name={data.isFictional ? "wand" : "glasses"}
                 className="w-4 text-muted-foreground"
               />
             </TooltipTrigger>
             <TooltipContent>
-              <p>{data.isFiction ? "Fiction" : "Non-Fiction"}</p>
+              <p>{data.isFictional ? "Fiction" : "Non-Fiction"}</p>
             </TooltipContent>
           </Tooltip>
 

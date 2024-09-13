@@ -1,50 +1,23 @@
-import BookCard, { BookItem } from "@/components/examples/BookCard";
-// import { BooksProvider } from "@/components/providers/books-provider";
-import BookListHeader from "./BookListHeader";
+import { Suspense } from "react";
 
-const BOOK_LIST: BookItem[] = [
-  {
-    title: "Lorem ipsum dolor",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto, ipsam aliquam rem et quia ad delectus beatae dolorum harum.",
-    author: "Bertram Man",
-    isFiction: true,
-    yearPublished: 1212,
-    rating: 3.5,
-  },
-  {
-    title: "Lorem ipsum dolor",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto, ipsam aliquam rem et quia ad delectus beatae dolorum harum.",
-    author: "Bertram Man",
-    isFiction: true,
-    yearPublished: 1212,
-    rating: 3.5,
-  },
-  {
-    title: "Lorem ipsum dolor",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto, ipsam aliquam rem et quia ad delectus beatae dolorum harum.",
-    author: "Bertram Man",
-    isFiction: true,
-    yearPublished: 1212,
-    rating: 3.5,
-  },
-];
+import { BooksProvider } from "@/components/providers/books-provider";
+import BookListHeader from "@/components/walkthroughs/books/BookListHeader";
+import BookList from "@/components/walkthroughs/books/BookList";
+import { BOOKS } from "@/lib/data";
 
-export default function BooksPage() {
+export default function Books() {
   return (
-    <div className="w-full max-w-md px-6 sm:px-0 mx-auto h-full pt-12 flex flex-col gap-2">
-      {/* <BooksProvider initialBooks={[]}> */}
+    <Suspense>
+      <BooksProvider initialBooks={BOOKS}>
+        <div className="w-full fixed left-1/2 -translate-x-1/2 max-w-md px-6 sm:px-0 mx-auto h-full pt-6 sm:pt-16 flex flex-col gap-2">
+          <BookListHeader />
+          <div className="pt-11 pb-[84px] overflow-scroll hidden-scrollbar">
+            <BookList />
+          </div>
+        </div>
 
-      <BookListHeader />
-
-      <div className="w-full flex flex-col gap-2">
-        {BOOK_LIST.map((book, i) => (
-          <BookCard key={i} data={book} />
-        ))}
-      </div>
-      {/* </BooksProvider> */}
-    </div>
+        <div className="fixed bottom-0 w-full h-4 bg-gradient-to-t from-background to-transparent" />
+      </BooksProvider>
+    </Suspense>
   );
 }
