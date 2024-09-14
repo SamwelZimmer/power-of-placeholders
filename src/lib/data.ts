@@ -261,7 +261,7 @@ export const PLACEHOLDER_BOOK: BookItem = {
   rating: 3.5,
 };
 
-export const FAKE_ARTICLE: NewsArticleItem = {
+export const PLACEHOLDER_ARTICLE: NewsArticleItem = {
   type: "politics",
   date: "2023-11-29",
   headline: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
