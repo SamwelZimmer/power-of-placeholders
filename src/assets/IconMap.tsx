@@ -3,6 +3,9 @@ import React, { ReactElement } from "react";
 import { IconMapType } from "@/lib/types";
 import Bin from "@/assets/icons/Bin";
 import BookmarkAdd from "@/assets/icons/BookmarkAdd";
+import Calendar from "@/assets/icons/Calendar";
+import Chevron from "@/assets/icons/Chevron";
+import Clock from "@/assets/icons/Clock";
 import Copy from "@/assets/icons/Copy";
 import Facebook from "@/assets/icons/Facebook";
 import Filter from "@/assets/icons/Filter";
@@ -24,7 +27,10 @@ import X from "@/assets/icons/X";
 export const IconMap: IconMapType = {
   bin: Bin,
   "bookmark-add": BookmarkAdd,
+  calendar: Calendar,
+  chevron: Chevron,
   copy: Copy,
+  clock: Clock,
   facebook: Facebook,
   filter: Filter,
   glasses: Glasses,

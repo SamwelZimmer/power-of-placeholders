@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Inter as FontSans } from "next/font/google";
+import { Source_Serif_4 as FontSerif } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -7,15 +9,20 @@ import TopNav from "@/components/hud/TopNav";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+});
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+const fontSerif = FontSerif({
+  subsets: ["latin"],
+  variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
+        className={`${fontSans.variable} ${geistMono.variable}  ${fontSerif.variable} font-sans antialiased bg-background`}
       >
         <ThemeProvider
           attribute="class"

@@ -1,5 +1,6 @@
 import Books from "@/components/examples/Books";
 import Messages from "@/components/examples/Messages";
+import News from "@/components/examples/News";
 import Testimonial from "@/components/examples/Testimonial";
 
 import {
@@ -8,6 +9,8 @@ import {
   PLACEHOLDER_TEXT_MESSAGES,
   PLACEHOLDER_BOOK,
   BOOKS,
+  ARTICLES,
+  PLACEHOLDER_ARTICLE,
 } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -64,6 +67,17 @@ export default function Home() {
       >
         View these in action
       </Link>
+
+      <SectionHeading text="News Articles" />
+
+      <div className="flex flex-col lg:flex-row gap-6 mx-auto justify-center items-center w-full px-6 sm:px-0 pb-12">
+        <News
+          data={[PLACEHOLDER_ARTICLE, PLACEHOLDER_ARTICLE, PLACEHOLDER_ARTICLE]}
+        />
+        <VerticalVsDivider className="text-muted-foreground hidden lg:block" />
+        <HorizontalVsDivider className="lg:hidden" />
+        <News data={ARTICLES} />
+      </div>
     </div>
   );
 }
