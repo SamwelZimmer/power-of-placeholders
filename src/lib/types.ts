@@ -26,7 +26,7 @@ export type BookItem = {
 
 export type NewsArticleItem = {
   type: string; // e.g. politics, sports, tech
-  date: Date;
+  date: string;
   headline: string;
   body: string;
   author: string;

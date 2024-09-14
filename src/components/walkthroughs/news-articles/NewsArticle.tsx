@@ -5,10 +5,18 @@ import { toast } from "sonner";
 import { Icon } from "@/assets/IconMap";
 import ExpandingArrowButton from "@/components/common/ExpandingArrowButton";
 import { NewsArticleItem } from "@/lib/types";
+import { cn } from "@/lib/utils";
+import { formatDate } from "@/lib/helpers";
 
-export default function NewsArticle({ data }: { data: NewsArticleItem }) {
+export default function NewsArticle({
+  data,
+  className,
+}: {
+  data: NewsArticleItem;
+  className?: string;
+}) {
   return (
-    <div className="flex flex-col gap-2 w-full max-w-md">
+    <div className={cn("flex flex-col gap-2 w-full max-w-md", className)}>
       <span className="text-muted-foreground text-xs mb-2">
         {data.type.toUpperCase()}
       </span>
@@ -19,7 +27,7 @@ export default function NewsArticle({ data }: { data: NewsArticleItem }) {
       <div className="flex items-center mt-3 text-xs gap-4 text-muted-foreground">
         <div className="flex items-center gap-2 min-w-max">
           <Icon name="calendar" className="text-inherit h-4" />
-          <span>{data.date.toLocaleDateString()}</span>
+          <span>{formatDate(data.date)}</span>
         </div>
 
         <div className="flex items-center gap-2 min-w-max">
