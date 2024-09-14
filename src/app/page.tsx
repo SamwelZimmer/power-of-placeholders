@@ -76,7 +76,7 @@ export default function Home() {
         />
         <VerticalVsDivider className="text-muted-foreground hidden lg:block" />
         <HorizontalVsDivider className="lg:hidden" />
-        <News data={ARTICLES} />
+        <News data={ARTICLES.slice(0, 3)} />
       </div>
     </div>
   );
