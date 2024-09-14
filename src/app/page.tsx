@@ -51,7 +51,7 @@ export default function Home() {
 
       <SectionHeading text="Book Reviews" />
 
-      <div className="flex flex-col lg:flex-row gap-6 mx-auto justify-center items-center w-full max-w-md px-6 sm:px-0">
+      <div className="flex flex-col lg:flex-row gap-6 mx-auto justify-center items-start w-full max-w-md px-6 sm:px-0">
         <Books books={[PLACEHOLDER_BOOK, PLACEHOLDER_BOOK, PLACEHOLDER_BOOK]} />
         <VerticalVsDivider className="text-muted-foreground hidden lg:block" />
         <HorizontalVsDivider className="lg:hidden" />

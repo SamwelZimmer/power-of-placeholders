@@ -53,8 +53,8 @@ export default function BookListHeader() {
 
           <SheetContent className="h-full">
             <SheetHeader className="text-left">
-              <SheetTitle className="flex items-center gap-2 mb-6">
-                <Icon name="filter" className="" />
+              <SheetTitle className="flex items-center gap-2 mb-6 text-primary">
+                <Icon name="filter" className="text-inherit" />
                 <span>Filter Books</span>
               </SheetTitle>
             </SheetHeader>
@@ -141,7 +141,7 @@ const CategoryDropdownSelector = () => {
             {activeFilters.isFiction !== null && (
               <Icon
                 name={activeFilters.isFiction ? "wand" : "glasses"}
-                className="w-4 mr-1"
+                className="w-4 mr-1 text-inherit"
               />
             )}
 
