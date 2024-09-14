@@ -1,4 +1,9 @@
-import { TestimonialData, MessageItem, BookItem } from "@/lib/types";
+import {
+  TestimonialData,
+  MessageItem,
+  BookItem,
+  NewsArticleItem,
+} from "@/lib/types";
 
 export const TESTIMONIALS: TestimonialData[] = [
   {
@@ -254,4 +259,13 @@ export const PLACEHOLDER_BOOK: BookItem = {
   isFictional: true,
   yearPublished: 1212,
   rating: 3.5,
+};
+
+export const FAKE_ARTICLE: NewsArticleItem = {
+  type: "politics",
+  date: new Date(),
+  headline: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, sapiente quidem. At soluta error qui quo dolores incidunt architecto magni voluptate sapiente obcaecati exercitationem, consequuntur dolore ex veniam aliquid dolor?",
+  author: "John Smith",
+  readTime: 5,
 };

@@ -23,3 +23,12 @@ export type BookItem = {
   isFictional: boolean;
   rating: number;
 };
+
+export type NewsArticleItem = {
+  type: string; // e.g. politics, sports, tech
+  date: Date;
+  headline: string;
+  body: string;
+  author: string;
+  readTime: number;
+};
