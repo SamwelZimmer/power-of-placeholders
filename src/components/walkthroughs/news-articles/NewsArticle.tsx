@@ -8,7 +8,7 @@ import { NewsArticleItem } from "@/lib/types";
 
 export default function NewsArticle({ data }: { data: NewsArticleItem }) {
   return (
-    <div className="flex flex-col gap-2 w-full max-w-md px-6 sm:px-0">
+    <div className="flex flex-col gap-2 w-full max-w-md">
       <span className="text-muted-foreground text-xs mb-2">
         {data.type.toUpperCase()}
       </span>
